@@ -24,3 +24,5 @@ int main()
 	
 	return 0;
 }
+
+// count set bits with lookup table

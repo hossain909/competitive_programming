@@ -1,25 +1,37 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-	int n = 7;
-	int count = 0;
-	vector<int> v;
-	
-	for (int i = 1; i <= n ; i++) {
-		while (i != 0) {
-			i = i & (i - 1);
-			count++;
-			cout << count << "";
+class Solution {
+	public:
+		void countBits(int n) {
+			vector<int> ans;
+			
+			for (int i = 0; i <= n; i++) {
+				int count = 0;
+				
+				while (i != 0) {
+					i = i & (i - 1);
+					count++;
+				}
+				ans.push_back(count);
+			}
+			
+			for (auto x : ans) {
+				cout << x << " ";
+			}
 		}
+};
+
+int main() {
+	int t;
+	cin >> t;
+	while (t--) {
+		int n;
+		cin >> n;
+		
+		Solution obj;
+		obj.countBits(n);
+		
 	}
-	cout << count << "";
-	
-	
-	// // print the array
-	// for (auto x : v) {
-	// 	cout << x << " ";
-	// }
 	return 0;
 }
